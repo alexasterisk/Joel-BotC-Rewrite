@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "hit": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:interaction",
+                    "nbt": "{\"Tags\":[\"psychopath_hit\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "extras:psychopath/axe/test_hit"
+    }
+}
