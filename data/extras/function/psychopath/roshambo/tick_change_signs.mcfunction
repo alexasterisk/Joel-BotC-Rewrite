@@ -210,4 +210,4 @@ execute if score @a[scores={Nominator=1},limit=1] RoshamboLocked matches 1 run e
 
 # Repeat if roshambo running
 
-execute if score #running Roshambo matches 1 run schedule function extras:roshambo/tick_change_signs 1t
+execute if score #running Roshambo matches 1 run schedule function extras:psychopath/roshambo/tick_change_signs 1t
