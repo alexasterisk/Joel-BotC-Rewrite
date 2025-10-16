@@ -50,7 +50,10 @@ scoreboard objectives add Booth dummy
 scoreboard objectives add SummonSTInteracted dummy
 scoreboard objectives add SummonSTConfirmed trigger
 scoreboard objectives add Annoying dummy
-scoreboard objectives add InHouse dummy
+scoreboard objectives add InHouse dummy "In House"
+scoreboard objectives add psychopath_axe_cooldown dummy
+scoreboard objectives add slayer_arrow_cooldown dummy
+scoreboard objectives add InCemetary dummy
 # scoreboard objectives add  dummy
 # scoreboard objectives add  dummy
 
@@ -73,6 +76,8 @@ team add Dead
 team modify Dead color dark_green
 team add Storyteller
 team modify Storyteller color blue
+team add Psychopath
+team modify Psychopath color dark_red
 team modify Storyteller nametagVisibility never
 team modify Storyteller collisionRule pushOtherTeams
 

@@ -55,8 +55,24 @@ execute unless score #compasses_given temp matches 1 run function buildings:call
 
 execute unless score #compasses_given temp matches 1 run scoreboard players set #compasses_given temp 1
 
-# Give everyone a score of 0 on the InHouse scoreboard and start particles function
+# Reset InHouse scoreboard and start particles function
 
-scoreboard players set @a InHouse 0
+scoreboard objectives remove InHouse
+scoreboard objectives add InHouse dummy "In House"
+scoreboard players add @a[scores={Player=..0}] InHouse 0
+# scoreboard objectives setdisplay sidebar.team.blue InHouse
+scoreboard players set #all_in_houses temp 0
+scoreboard players set #in_house_sb_removed temp 0
 
 function buildings:entrance_particles
+
+# Make Psychopath killing unallowed and remove all axes
+
+data remove storage extras:immersive_pvp allowed
+execute as @a run function extras:psychopath/axe/remove
+execute as @a run function extras:slayer/remove_crossbow
+
+# Make sure PVP is turned off
+
+execute if score #immersive_pvp temp matches 1 if score #pvp_enabled temp matches 0 run gamerule pvp false
+effect clear @a resistance
